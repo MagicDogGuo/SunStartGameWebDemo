@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Unity Web Player | A112</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="../player-shell.css">
   </head>
-  <body>
+  <body class="player-page">
+    <header class="player-topbar">
+      <nav aria-label="Site navigation">
+        <a href="../index.html">← Back to demo selection</a>
+      </nav>
+    </header>
+    <div class="player-shell">
+      <div class="player-game-panel">
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -20,8 +29,19 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">A112</div>
+        <div id="unity-build-title">A104</div>
       </div>
+    </div>
+      </div>
+      <section class="player-desc" aria-label="About this demo">
+        <div class="player-desc-text">
+          <h2>A104</h2>
+          <p>WebGL demo build. Use in-game instructions for controls.</p>
+          <p>Layout is for showcase only—replace the screenshot and copy with your own assets.</p>
+        </div>
+        <div class="player-desc-thumb">
+          <img src="../screenshots/104.png" alt="A104 preview thumbnail" width="640" height="360" loading="lazy" decoding="async" />
+      </section>
     </div>
     <script>
       var canvas = document.querySelector("#unity-canvas");

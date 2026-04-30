@@ -1,0 +1,167 @@
+/* Wrapper layout for WebGL player pages (center column + top nav back link) */
+:root {
+  --player-page-bg: #262017;
+  --player-topbar-bg: #1a1714;
+  --player-topbar-link: #e8e4dc;
+  --player-panel-bg: #231f20;
+  --player-info-bg: #d8e0d8;
+  --player-desc-bg: #d8e0d8;
+  --player-desc-border: rgba(0, 0, 0, 0.1);
+  --player-desc-text: #2a2a2a;
+}
+
+.player-page {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--player-page-bg);
+  font-family: "Segoe UI", "Microsoft JhengHei", Helvetica, Arial, sans-serif;
+}
+
+.player-topbar {
+  background: var(--player-topbar-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.65rem 1.25rem;
+}
+
+.player-topbar nav {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.player-topbar a {
+  color: var(--player-topbar-link);
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.player-topbar a:hover {
+  text-decoration: underline;
+}
+
+.player-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2.5rem;
+}
+
+.player-game-panel {
+  background: var(--player-panel-bg);
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+
+/* Unity 2021+ template (104 / 105) — undo viewport centering inside shell */
+.player-shell #unity-container.unity-desktop {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 100%;
+}
+
+.player-shell #unity-canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.player-shell #unity-footer {
+  background: var(--player-info-bg);
+  padding: 6px 10px;
+  min-height: 44px;
+  border-top: 1px solid var(--player-desc-border);
+}
+
+.player-shell #unity-footer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Legacy Unity template (101) */
+.player-shell .webgl-content {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 100%;
+}
+
+.player-shell .webgl-content #gameContainer {
+  margin: 0 auto;
+  background: var(--player-panel-bg);
+}
+
+.player-shell .webgl-content .footer {
+  background: var(--player-info-bg);
+  padding: 6px 10px;
+  margin-top: 0 !important;
+  border-top: 1px solid var(--player-desc-border);
+}
+
+.player-shell .webgl-content .footer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.player-desc {
+  display: grid;
+  grid-template-columns: 1fr minmax(140px, 280px);
+  gap: 1.25rem;
+  padding: 1.25rem 1rem;
+  background: var(--player-desc-bg);
+  border-radius: 0 0 4px 4px;
+  border: 1px solid var(--player-desc-border);
+  border-top: none;
+}
+
+.player-desc-text {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--player-desc-text);
+}
+
+.player-desc-text h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.player-desc-text p {
+  margin: 0 0 0.75rem;
+}
+
+.player-desc-text p:last-child {
+  margin-bottom: 0;
+}
+
+.player-desc-thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 720px) {
+  .player-desc {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .player-shell {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .player-desc {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .player-game-panel {
+    border-radius: 0;
+  }
+}
