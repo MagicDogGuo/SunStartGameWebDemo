@@ -28,6 +28,7 @@ pnpm-debug.log*
 
 # --- Node (若日後加入建置工具) ---
 node_modules/
+dist/
 
 # --- Python (若日後加入腳本) ---
 __pycache__/

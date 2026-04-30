@@ -22,6 +22,7 @@ html {
 }
 body {
   margin: 0;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,7 +33,18 @@ body {
     radial-gradient(ellipse 80% 50% at 50% -18%, rgba(232, 180, 76, 0.09), transparent),
     var(--bg);
 }
+.neuron-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
 .card {
+  position: relative;
+  z-index: 1;
   width: 80%;
   max-width: 100%;
   background: var(--surface);
